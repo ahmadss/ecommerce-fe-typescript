@@ -1,0 +1,133 @@
+/* Latar belakang dan tata letak utama */
+.bg {
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Tinggi penuh viewport */
+  }
+  
+  /* Form container */
+  .parent {
+    width: 100%;
+    max-width: 600px; /* Lebar maksimum form */
+    background: #ffffff;
+    padding: 30px; /* Padding di dalam form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin: 20px auto; /* Pusatkan secara horizontal dengan margin atas dan bawah */
+    transition: all 0.3s ease; /* Transisi halus */
+  }
+  
+  /* Judul Form */
+  h1 {
+    margin-bottom: 24px; /* Margin di bawah heading */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Warna teks lebih gelap untuk kontras lebih baik */
+  }
+  
+  /* Gaya untuk item form */
+  .nz-form-item {
+    margin-bottom: 20px; /* Jarak antar item form */
+  }
+  
+  /* Gaya untuk label form */
+  .nz-form-label {
+    font-weight: bold;
+    color: #555; /* Warna teks label */
+    margin-bottom: 8px; /* Jarak bawah label */
+    display: block; /* Menampilkan label sebagai blok untuk memposisikan di atas input */
+  }
+  
+  /* Gaya untuk input, select, dan textarea */
+  input[nz-input], 
+  textarea[nz-input],
+  .nz-select {
+    width: 100%; /* Buat input, textarea, dan select mengambil seluruh lebar kontainer */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border ringan */
+    border-radius: 4px; /* Sudut melengkung */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Bayangan dalam yang halus */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transisi halus */
+  }
+  
+  /* Efek fokus pada input, select, dan textarea */
+  input[nz-input]:focus, 
+  textarea[nz-input]:focus,
+  .nz-select-focused {
+    border-color: #007bff; /* Warna border saat fokus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Bayangan biru saat fokus */
+    outline: none; /* Hilangkan outline default */
+  }
+  
+  .image-preview {
+    display: flex;
+    justify-content: center; /* Pusatkan gambar secara horizontal */
+    align-items: center; /* Pusatkan gambar secara vertikal */
+    max-width: 100%; /* Maksimalkan lebar preview gambar agar tidak melebihi kontainer */
+    margin-top: 10px; /* Jarak atas dari input file */
+  }
+  
+  /* Gaya untuk gambar preview */
+  .image-preview img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar kontainer */
+    max-height: 200px; /* Atur tinggi maksimum gambar */
+    border-radius: 4px; /* Sudut melengkung pada gambar */
+    border: 1px solid #ccc; /* Border ringan untuk gambar */
+  }
+
+  input[type="file"] {
+    display: block; /* Pastikan input file mengambil baris penuh */
+    width: 100%; /* Buat input file mengambil lebar penuh dari kontainernya */
+    padding: 8px; /* Padding untuk memberikan ruang di dalam input file */
+    border: 1px solid #ccc; /* Border ringan di sekitar input file */
+    border-radius: 4px; /* Sudut melengkung pada border */
+    box-sizing: border-box; /* Termasuk padding dan border dalam lebar total elemen */
+    margin-bottom: 10px; /* Jarak bawah dari elemen lainnya */
+  }
+  
+  /* Gaya untuk tombol */
+  button[nz-button] {
+    width: 100%; /* Tombol mengambil seluruh lebar form */
+    margin-top: 20px; /* Jarak atas tombol */
+    padding: 10px 20px; /* Padding dalam tombol */
+    border-radius: 4px; /* Sudut melengkung */
+    border: none; /* Hilangkan border default */
+    background-color: #007bff; /* Warna utama */
+    color: white; /* Warna teks putih */
+    font-size: 16px; /* Ukuran teks lebih besar untuk keterbacaan */
+    cursor: pointer; /* Pointer pada hover */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transisi halus */
+  }
+  
+  button[nz-button]:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan saat hover */
+  }
+
+  .nz-form-control {
+    display: flex; /* Menggunakan flexbox untuk menyusun tombol secara horizontal */
+    justify-content: flex-start; /* Menyusun tombol ke awal kontainer */
+    gap: 16px; /* Jarak antara tombol */
+  }
+  
+  /* Untuk tombol dalam form control */
+  .nz-form-control button {
+    flex: 1 0 auto; /* Tombol akan menyesuaikan ukurannya dengan kontainer */
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 768px) {
+    .bg {
+      padding: 10px;
+    }
+  
+    .parent {
+      padding: 20px; /* Padding untuk layar lebih kecil */
+      margin: 10px auto; /* Kurangi margin untuk layar lebih kecil */
+    }
+  }
+  

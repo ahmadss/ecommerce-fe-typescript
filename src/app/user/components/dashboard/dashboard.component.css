@@ -1,0 +1,78 @@
+/* src/app/components/home/home.component.css */
+.product-list-container {
+    width: 100%;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between products */
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #fff;
+  }
+  
+  .product-image {
+    width: 100%; /* Full width */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product-details {
+    padding-top: 10px;
+  }
+  
+  .product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    font-size: 1.2rem;
+    color: #e60023;
+  }
+  
+  .product-stock {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .button-group {
+    margin-top: 10px;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .button-wishlist {
+    background-color: #ffc107;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

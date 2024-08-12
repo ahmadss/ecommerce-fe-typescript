@@ -1,0 +1,47 @@
+<div class="bg">
+<div class="parent">
+<div class="product-list-header margin-top">
+    <div class="search-container">
+        <input nz-input [(ngModel)]="searchQuery" placeholder="Search..." (keydown.enter)="onSearch()" />
+        <button nz-button nzType="primary" (click)="onSearch()">Search</button>
+    </div>
+    <button nz-button nzType="primary" routerLink="/create-product" style="margin-left: 16px;">Create Product</button>
+  </div>
+  
+  <nz-spin [nzSpinning]="isSpinning" nzSize="large" nzTip="Working...">
+    <nz-table #basicTable [nzData]="products" [nzBordered]="true">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.title }}</td>
+          <td>{{ product.description }}</td>
+          <td><img [src]="productImages[product.image]" alt="{{ product.title }}" width="50" /></td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+          <td>
+            <button nz-button nzType="link" (click)="onEdit(product)">Edit</button>
+            <button nz-button nzType="link" nzDanger (click)="onDelete(product.secure_id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  
+    <nz-pagination
+      [nzPageIndex]="currentPage"
+      [nzTotal]="totalElements"
+      [nzPageSize]="pageSize"
+      (nzPageIndexChange)="onPageChange($event)">
+    </nz-pagination>
+  </nz-spin>
+  </div>
+  </div>
+  

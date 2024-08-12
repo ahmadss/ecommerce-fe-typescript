@@ -1,0 +1,106 @@
+.bg {
+    background-color: #F8F8F8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height viewport */
+  }
+  
+  .parent {
+    width: 100%;
+    max-width: 600px; /* Maximum width for form */
+    background: #ffffff;
+    padding: 30px; /* Padding for card */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 20px auto; /* Center card horizontally with top and bottom margin */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .parent:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  h1 {
+    margin-bottom: 24px; /* Margin below heading */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Darker text color for better contrast */
+  }
+  
+  .nz-form-item {
+    margin-bottom: 20px; /* Margin between form items */
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px; /* Padding to make room for the icon */
+    margin-bottom: 12px; /* Margin below input fields */
+    border: 1px solid #ccc; /* Light border */
+    margin-left: 10px;
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inset shadow */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
+  
+  .input-container input:focus {
+    border-color: #007bff; /* Border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Blue shadow on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .icon-check {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4CAF50; /* Green color for check icon */
+    font-size: 16px;
+  }
+  
+  .error-message {
+    color: #ff4d4f; /* Red color for error messages */
+    margin-top: 4px; /* Space above the error message */
+    font-size: 14px; /* Slightly smaller text */
+  }
+  
+  small {
+    display: block;
+  }
+  
+  button.login-form-button {
+    width: 100%; /* Button spans full width of form */
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Primary color */
+    color: white; /* White text */
+    font-size: 16px; /* Larger text for better readability */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
+  
+  button.login-form-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .bg {
+      padding: 10px;
+    }
+  
+    .parent {
+      padding: 20px; /* Padding for smaller screens */
+      margin: 10px auto; /* Reduce margin for smaller screens */
+    }
+  }
+  

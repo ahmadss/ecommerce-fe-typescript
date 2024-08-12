@@ -1,0 +1,87 @@
+<div class="bg">
+  <div class="parent">
+    <nz-spin [nzSpinning]="isSpinning" nzSize="large" nzTip="Loading...">
+        <div class="child">
+          <div nz-row class="imgDiv">
+            <div nz-col nzSpan="24">
+              <h1>Category Management</h1>
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+            </div>
+          </div>
+  
+          <nz-card>
+            <nz-card-meta [nzTitle]="'Category Form'"></nz-card-meta>
+            <form nz-form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="categoryCodeErrorTpl">
+                  <div class="input-container">
+                    <input nz-input placeholder="Category Code" formControlName="code" id="code" [attr.disabled]="isEditMode ? true : null"/>
+                  </div>
+                  <ng-template #categoryCodeErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Category code is required!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+  
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="categoryNameErrorTpl">
+                  <div class="input-container">
+                    <input nz-input placeholder="Category Name" formControlName="name" id="name" />
+                  </div>
+                  <ng-template #categoryNameErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Category name is required!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+  
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="categoryDescriptionErrorTpl">
+                  <div class="input-container">
+                    <textarea nz-input placeholder="Category Description" formControlName="description" id="description"></textarea>
+                  </div>
+                  <ng-template #categoryDescriptionErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Category description is required!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+  
+              <button nz-button class="category-form-button" nzType="primary" [disabled]="categoryForm.invalid">{{ isEditMode ? 'Update Category' : 'Add Category' }}</button>
+            </form>
+          </nz-card>
+
+          <nz-form-item>
+            <nz-form-control>
+              <input nz-input placeholder="Search by Category Name" [(ngModel)]="searchQuery" (ngModelChange)="searchCategories()" />
+            </nz-form-control>
+          </nz-form-item>
+  
+          <nz-card *ngFor="let category of categories" [nzTitle]="category.name">
+            <nz-card-meta
+              [nzTitle]="category.name"
+              [nzDescription]="category.description"
+            ></nz-card-meta>
+            <button nz-button nzType="default" (click)="editCategory(category)">Edit</button>
+            <button nz-button (click)="deleteCategory(category.code)">Delete</button>
+          </nz-card>
+    
+          <!-- Pagination Controls -->
+          <nz-pagination
+            [nzPageIndex]="currentPage + 1"
+            [nzTotal]="totalElements"
+            [nzPageSize]="limit"
+            (nzPageIndexChange)="changePage($event)">
+          </nz-pagination>
+        </div>
+     
+    </nz-spin>
+  </div>
+</div>
+  

@@ -1,0 +1,48 @@
+<div class="bg">
+    <nz-spin [nzSpinning]="isSpinning" nzSize="large" nzTip="Working...">
+      <div class="parent">
+        <div class="child">
+          <div nz-row class="imgDiv">
+            <div nz-col nzSpan="24">
+              <h1>Login</h1>
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+            </div>
+          </div>
+          <form nz-form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <nz-form-item>
+              <nz-form-control nzHasFeedback [nzErrorTip]="usernameErrorTpl">
+                <div class="input-container">
+                  <input nz-input placeholder="Username" formControlName="username" id="username" />
+                </div>
+                <ng-template #usernameErrorTpl let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Please input your username!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+  
+            <nz-form-item>
+              <nz-form-control nzHasFeedback [nzErrorTip]="passwordErrorTpl">
+                <div class="input-container">
+                  <input nz-input placeholder="Password" type="password" formControlName="password" id="password" />
+                </div>
+                <ng-template #passwordErrorTpl let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Password is required!
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+  
+            <button nz-button class="login-form-button" nzType="primary" [disabled]="loginForm.invalid">Login</button>
+            
+            Or <a routerLink="/register">Register now!</a>
+          </form>
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+  

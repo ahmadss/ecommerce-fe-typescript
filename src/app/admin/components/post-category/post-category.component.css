@@ -1,0 +1,123 @@
+/* Latar belakang dan tata letak utama */
+.bg {
+    background-color: #F8F8F8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Tinggi penuh untuk viewport */
+  }
+  
+  /* Kontainer utama */
+  .parent {
+    width: 100%;
+    max-width: 800px; /* Lebar maksimum kontainer */
+    background: #ffffff;
+    padding: 30px; /* Padding di dalam kontainer */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin: 20px auto; /* Pusatkan secara horizontal dengan margin atas dan bawah */
+    transition: all 0.3s ease; /* Transisi halus */
+  }
+  
+  /* Gaya untuk judul utama */
+  h1 {
+    margin-bottom: 24px; /* Margin di bawah heading */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Warna teks lebih gelap untuk kontras lebih baik */
+  }
+  
+  /* Gaya untuk item form */
+  .nz-form-item {
+    margin-bottom: 20px; /* Jarak antar item form */
+  }
+  
+  /* Gaya untuk label form */
+  .nz-form-label {
+    font-weight: bold;
+    color: #555; /* Warna teks label */
+  }
+  
+  /* Gaya untuk input, select, dan textarea */
+  input[nz-input], 
+  textarea[nz-input] {
+    width: 100%; /* Buat input dan textarea mengambil seluruh lebar kontainer */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border ringan */
+    border-radius: 4px; /* Sudut melengkung */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Bayangan dalam yang halus */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transisi halus */
+  }
+  
+  /* Efek fokus pada input dan textarea */
+  input[nz-input]:focus, 
+  textarea[nz-input]:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Bayangan biru saat fokus */
+    outline: none; /* Hilangkan outline default */
+  }
+  
+  /* Gaya untuk button dalam form */
+  .category-form-button {
+    width: 100%; /* Button mengambil seluruh lebar form */
+    margin-top: 20px; /* Jarak atas button */
+    padding: 10px 20px; /* Padding dalam button */
+    border-radius: 4px; /* Sudut melengkung */
+    border: none; /* Hilangkan border default */
+    background-color: #007bff; /* Warna utama */
+    color: white; /* Warna teks putih */
+    font-size: 16px; /* Ukuran teks lebih besar untuk keterbacaan */
+    cursor: pointer; /* Pointer pada hover */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Transisi halus */
+  }
+  
+  .category-form-button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan saat hover */
+  }
+  
+  /* Gaya untuk alert error */
+  .alert.alert-danger {
+    color: #ff4d4f; /* Warna merah untuk pesan error */
+    background-color: #fff5f5; /* Warna latar belakang merah muda untuk error */
+    border: 1px solid #ff4d4f; /* Border merah untuk error */
+    border-radius: 4px; /* Sudut melengkung */
+    padding: 10px; /* Padding di dalam alert */
+    margin-bottom: 20px; /* Jarak di bawah alert */
+  }
+  
+  /* Gaya untuk card */
+  nz-card {
+    margin-bottom: 20px; /* Jarak antar card */
+  }
+  
+  /* Gaya untuk button dalam card */
+  nz-card button[nz-button] {
+    margin-right: 10px; /* Jarak di sebelah kanan button */
+  }
+  
+  /* Gaya untuk input pencarian */
+  nz-form-item input[nz-input] {
+    width: 100%; /* Input pencarian mengambil seluruh lebar kontainer */
+  }
+  
+  /* Gaya untuk pagination */
+  nz-pagination {
+    margin-top: 20px; /* Jarak atas pagination */
+    text-align: center; /* Pusatkan pagination secara horizontal */
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 768px) {
+    .bg {
+      padding: 10px;
+    }
+  
+    .parent {
+      padding: 20px; /* Padding untuk layar lebih kecil */
+      margin: 10px auto; /* Kurangi margin untuk layar lebih kecil */
+    }
+  }
+  

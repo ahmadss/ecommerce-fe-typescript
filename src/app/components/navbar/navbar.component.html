@@ -1,0 +1,57 @@
+<div *ngIf="!isLoginPage()">
+  <nz-header class="main-header" nz-row nzType="flex">
+    <div class="logo">
+      <a routerLink="/">E-Commerce</a>
+    </div>
+    <div class="nav-links">
+      <ng-container *ngIf="isAdminLoggedIn; else userLoggedIn">
+        <span class="username">Welcome, {{ userName }}!</span>
+        <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+        <a nz-button nzType="link" routerLink="/admin/category" routerLinkActive="active">Category</a>
+        <a nz-button nzType="link" routerLink="/admin/product" routerLinkActive="active">Product</a>
+        <a nz-button nzType="link" (click)="logout()">Logout</a>
+      </ng-container>
+      <ng-template #userLoggedIn>
+        <ng-container *ngIf="isUserLoggedIn; else notLoggedIn">
+          <span>Welcome, {{ userName }}!</span>
+          <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+          <a nz-button nzType="link" (click)="logout()">Logout</a>
+        </ng-container>
+      </ng-template>
+      <ng-template #notLoggedIn>
+        <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+        <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+      </ng-template>
+    </div>
+  </nz-header>
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+      <ng-container *ngIf="isAdminLoggedIn; else userLoggedInSider">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/admin-dashboard" routerLinkActive="active">Admin Dashboard</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" (click)="logout()">Logout</a>
+        </li>
+      </ng-container>
+      <ng-template #userLoggedInSider>
+        <ng-container *ngIf="isUserLoggedIn; else notLoggedInSider">
+          <li nz-menu-item>
+            <a nz-button nzType="link" routerLink="/user-dashboard" routerLinkActive="active">User Dashboard</a>
+          </li>
+          <li nz-menu-item>
+            <a nz-button nzType="link" (click)="logout()">Logout</a>
+          </li>
+        </ng-container>
+      </ng-template>
+      <ng-template #notLoggedInSider>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+      </ng-template>
+    </ul>
+  </nz-sider>
+</div>

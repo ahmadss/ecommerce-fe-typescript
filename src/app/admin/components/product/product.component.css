@@ -1,0 +1,78 @@
+/* product-list.component.css */
+
+/* Mengatur tampilan header dengan pencarian dan tombol "Create Product" */
+
+.bg {
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    min-height: 100vh; /* Tinggi penuh viewport */
+  }
+
+  .parent {
+    width: 100%;
+    max-width: 1000px; /* Lebar maksimum form */
+    background: #ffffff;
+    padding: 30px; /* Padding di dalam form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin: 20px auto; /* Pusatkan secara horizontal dengan margin atas dan bawah */
+    transition: all 0.3s ease; /* Transisi halus */
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center; /* Pusatkan vertikal */
+  }
+  
+  .search-container input {
+    margin-right: 8px; /* Jarak kanan input untuk memberi ruang pada tombol pencarian */
+  }
+  
+  .search-container button {
+    margin-right: 8px; /* Jarak kanan tombol pencarian untuk memberi ruang pada tombol 'Create Product' */
+  }
+
+  .product-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 16px; /* Menambahkan margin top */
+  }
+  
+  /* Anda juga dapat membuat kelas khusus */
+  .margin-top {
+    margin-top: 16px;
+  }
+
+  
+  
+  .product-list-header input {
+    width: 300px;
+    margin-right: 8px;
+  }
+  
+  .product-list-header button {
+    min-width: 100px;
+  }
+  
+  /* Mengatur tampilan lainnya seperti tabel dan paginasi */
+  .nz-table td {
+    vertical-align: middle;
+  }
+  
+  .nz-table img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  nz-pagination {
+    margin-top: 16px;
+    text-align: center;
+  }
+  

@@ -1,0 +1,64 @@
+<div class="bg">
+    <div class="parent">
+      <h1>Edit Product</h1>
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="title">Title</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <input nz-input id="title" formControlName="title" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="categories">Categories</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <nz-select
+              formControlName="categories"
+              nzMode="multiple"
+              nzPlaceHolder="Select categories">
+              <nz-option *ngFor="let category of categories" [nzValue]="category.code" [nzLabel]="category.name"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="description">Description</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <textarea nz-input id="description" formControlName="description"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="image">Image</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <input type="file" (change)="onFileChange($event)" />
+            <div *ngIf="imagePreview" class="image-preview">
+              <img [src]="imagePreview" alt="Product Image" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="price">Price</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <input nz-input type="number" id="price" formControlName="price" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-label [nzSpan]="24" nzFor="stock">Stock</nz-form-label>
+          <nz-form-control [nzSpan]="24">
+            <input nz-input type="number" id="stock" formControlName="stock" />
+          </nz-form-control>
+        </nz-form-item>
+  
+        <nz-form-item>
+          <nz-form-control [nzSpan]="24">
+            <button nz-button nzType="primary" type="submit">Update</button>
+            <button nz-button nzType="default" (click)="onReset()">Reset</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+  

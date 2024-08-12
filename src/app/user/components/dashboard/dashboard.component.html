@@ -1,0 +1,22 @@
+<!-- src/app/components/home/home.component.html -->
+<div (scroll)="onScroll()" class="product-list-container">
+    <div class="product-list">
+      <div class="product-card" *ngFor="let product of products">
+        <img class="product-image" [src]="product.imageUrl" [alt]="product.title">
+        <div class="product-details">
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-description">{{ product.description }}</div>
+          <div class="product-price">${{ product.price }}</div>
+          <div class="product-stock">In Stock: {{ product.stock }}</div>
+          <div class="button-group">
+            <button class="button">Add to Cart</button>
+            <button class="button button-wishlist">Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isLoading" class="loading-spinner">
+      Loading...
+    </div>
+  </div>

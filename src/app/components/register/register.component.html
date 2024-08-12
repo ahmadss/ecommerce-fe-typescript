@@ -1,0 +1,86 @@
+<div class="bg">
+    <nz-spin [nzSpinning]="isSpinning" nzSize="large" nzTip="Working...">
+      <div class="parent">
+        <div class="child">
+          <div nz-row class="imgDiv">
+            <div nz-col nzSpan="24">
+              <h1>Sign Up</h1>
+            </div>
+          </div>
+          <form nz-form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <nz-form-item>
+              <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-mail!">
+                <div class="input-container">
+                  <input nz-input placeholder="E-mail" formControlName="email" id="email" />
+                </div>
+                <div *ngIf="email?.invalid && email?.touched">
+                    <small *ngIf="email?.errors?.['required']">E-mail is required.</small>
+                    <small *ngIf="email?.errors?.['email']">The input is not a valid E-mail.</small>
+                  </div>
+              </nz-form-control>
+            </nz-form-item>
+  
+            <nz-form-item>
+              <nz-form-control nzHasFeedback [nzErrorTip]="errorPass">
+                <div class="input-container">
+                  <input nz-input placeholder="Password" type="password" formControlName="password" id="password" />
+                </div>
+                <ng-template #errorPass let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Password is required!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('pattern')">
+                    Password should contain 8 characters, 1 lowercase, 1 uppercase, 1 number, and 1 special character.
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+  
+            <nz-form-item>
+              <nz-form-control nzHasFeedback [nzErrorTip]="confirmPassError">
+                <div class="input-container">
+                  <input nz-input placeholder="Confirm Password" type="password" formControlName="confirmPassword" id="confirmPassword" />
+                </div>
+                <ng-template #confirmPassError let-control>
+                  <ng-container *ngIf="control.hasError('required')">
+                    Confirm Password is required!
+                  </ng-container>
+                  <ng-container *ngIf="control.hasError('mustMatch')">
+                    Passwords must match.
+                  </ng-container>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+  
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="userErrorTpl">
+                  <input nz-input placeholder="Name" formControlName="username" id="username" />
+                  <ng-template #userErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Please input your username!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+    
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="roleErrorTpl">
+                  <nz-select formControlName="role_names" nzPlaceHolder="Select Role" nzMode="multiple">
+                    <nz-option *ngFor="let role of roleNames" [nzValue]="role" [nzLabel]="role"></nz-option>
+                  </nz-select>
+                  <ng-template #roleErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">
+                      Please select at least one role!
+                    </ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+  
+            <button nz-button class="login-form-button" nzType="primary" [disabled]="registerForm.invalid">Register</button>
+            Or <a routerLink="/login">Login now!</a>
+          </form>
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+  
